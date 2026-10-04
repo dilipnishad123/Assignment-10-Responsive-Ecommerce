@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuraPro Wireless Headphones | NexStore Product Details</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .breadcrumb-bar {
+            padding: 1.25rem 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .breadcrumb-bar a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .product-detail-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3.5rem;
+            padding: 1rem 0 5rem;
+            align-items: start;
+        }
+        .detail-gallery {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+        }
+        .gallery-main-icon {
+            font-size: 7rem;
+            margin: 2rem 0;
+        }
+        .gallery-thumbs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .thumb-box {
+            border: 2px solid var(--border);
+            padding: 0.5rem 0.75rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        .thumb-box.active {
+            border-color: var(--primary);
+            background: #eff6ff;
+        }
+        .detail-info h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+        .detail-meta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-bottom: 1.25rem;
+            font-size: 0.9rem;
+        }
+        .in-stock-tag {
+            color: var(--success);
+            font-weight: 700;
+        }
+        .detail-price-box {
+            background: #f8fafc;
+            border: 1px solid var(--border);
+            padding: 1.25rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+        .detail-specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+        .detail-specs-table td {
+            padding: 0.6rem 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .detail-specs-table td:first-child {
+            font-weight: 700;
+            color: var(--text-muted);
+            width: 160px;
+        }
+        .purchase-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 860px) {
+            .product-detail-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">🛍️ Nex<span>Store</span></a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">All Products</a></li>
+                <li><a href="index.html#categories">Categories</a></li>
+                <li><a href="index.html#offers">Deals</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="auth.html" class="icon-link">👤</a>
+                <a href="cart.html" class="cart-btn">🛒 Cart <span class="cart-count">3</span></a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container breadcrumb-bar">
+        <a href="index.html">Home</a> / <a href="products.html">Audio</a> / <span>AuraPro Wireless Studio X</span>
+    </div>
+
+    <!-- Product Detail Layout -->
+    <main class="container product-detail-layout">
+        <!-- Left: Image Showcase -->
+        <div class="detail-gallery">
+            <span class="p-badge" style="position: static; display: inline-block;">-30% FESTIVE DEAL</span>
+            <div class="gallery-main-icon">🎧</div>
+            <div class="gallery-thumbs">
+                <span class="thumb-box active">🎧</span>
+                <span class="thumb-box">🎵</span>
+                <span class="thumb-box">📦</span>
+            </div>
+        </div>
+
+        <!-- Right: Information & Buying Actions -->
+        <div class="detail-info">
+            <h1>AuraPro Wireless Studio X</h1>
+            <div class="detail-meta">
+                <span style="color: #f59e0b;">★★★★★ <strong>4.9</strong> (1,248 reviews)</span> •
+                <span class="in-stock-tag">✓ In Stock (Ships in 24 Hours)</span>
+            </div>
+
+            <div class="detail-price-box">
+                <div class="p-price-row" style="margin-bottom: 0.5rem;">
+                    <span class="price-now" style="font-size: 2rem;">₹2,999</span>
+                    <span class="price-was" style="font-size: 1.1rem;">₹4,299</span>
+                    <span style="color: #ef4444; font-weight: 700; font-size: 0.85rem;">Save ₹1,300 (30%)</span>
+                </div>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Inclusive of all taxes. Free express shipping included.</p>
+            </div>
+
+            <p style="color: #475569; font-size: 0.98rem;">
+                Engineered with dual 40mm titanium diaphragm drivers and hybrid Active Noise Cancellation (ANC), the AuraPro delivers distortion-free, deep bass and ultra-crisp highs. Featuring soft protein memory foam ear cushions for fatigue-free listening.
+            </p>
+
+            <!-- Technical Specifications Table -->
+            <table class="detail-specs-table">
+                <tr><td>Battery Life:</td><td>40 Hours (ANC On) / 60 Hours (Standard)</td></tr>
+                <tr><td>Connectivity:</td><td>Bluetooth 5.3 + 3.5mm Aux Jack</td></tr>
+                <tr><td>Charging:</td><td>USB-C Fast Charging (10 mins = 5 hrs playback)</td></tr>
+                <tr><td>Microphone:</td><td>Quad-mic array with ENC background cancellation</td></tr>
+                <tr><td>Warranty:</td><td>1 Year Brand Replacement Warranty</td></tr>
+            </table>
+
+            <!-- Purchase Buttons -->
+            <div class="purchase-actions">
+                <a href="cart.html" class="btn btn-primary" style="flex: 1.5;">Add to Cart</a>
+                <a href="cart.html" class="btn btn-secondary" style="flex: 1;">Buy Now</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 NexStore E-Commerce • Assignment 10 Product Details Page</p>
+            <p><a href="../../index.html">← Back to Master Hub</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

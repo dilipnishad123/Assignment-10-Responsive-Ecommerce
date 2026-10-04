@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products Catalog | NexStore</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .catalog-layout {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 2.5rem;
+            padding: 3rem 0 5rem;
+        }
+        .filter-sidebar {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            height: fit-content;
+        }
+        .filter-group {
+            margin-bottom: 1.75rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1.25rem;
+        }
+        .filter-group:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .filter-group h3 {
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+        .filter-options {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .filter-options label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+        .catalog-top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .sort-select {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: white;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 860px) {
+            .catalog-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">🛍️ Nex<span>Store</span></a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="active">All Products</a></li>
+                <li><a href="index.html#categories">Categories</a></li>
+                <li><a href="index.html#offers">Deals</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="auth.html" class="icon-link">👤</a>
+                <a href="cart.html" class="cart-btn">🛒 Cart <span class="cart-count">3</span></a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container catalog-layout">
+        <!-- Filter Sidebar -->
+        <aside class="filter-sidebar">
+            <div class="filter-group">
+                <h3>Filter by Category</h3>
+                <ul class="filter-options">
+                    <li><label><input type="checkbox" checked> Headphones & Audio (12)</label></li>
+                    <li><label><input type="checkbox"> Keyboards & Mice (18)</label></li>
+                    <li><label><input type="checkbox"> Smartwatches (9)</label></li>
+                    <li><label><input type="checkbox"> Laptop Accessories (14)</label></li>
+                    <li><label><input type="checkbox"> Chargers & Cables (11)</label></li>
+                </ul>
+            </div>
+
+            <div class="filter-group">
+                <h3>Price Range</h3>
+                <ul class="filter-options">
+                    <li><label><input type="radio" name="price" checked> All Prices</label></li>
+                    <li><label><input type="radio" name="price"> Under ₹1,000</label></li>
+                    <li><label><input type="radio" name="price"> ₹1,000 – ₹2,500</label></li>
+                    <li><label><input type="radio" name="price"> ₹2,500 – ₹5,000</label></li>
+                    <li><label><input type="radio" name="price"> Above ₹5,000</label></li>
+                </ul>
+            </div>
+
+            <div class="filter-group">
+                <h3>Customer Rating</h3>
+                <ul class="filter-options">
+                    <li><label><input type="checkbox"> ★★★★☆ & Above</label></li>
+                    <li><label><input type="checkbox"> ★★★☆☆ & Above</label></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Product Grid Area -->
+        <section>
+            <div class="catalog-top-bar">
+                <div>
+                    <h1 style="font-size: 1.8rem;">All Products</h1>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Showing 6 of 64 products</p>
+                </div>
+                <select class="sort-select">
+                    <option>Sort by: Featured</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                    <option>Customer Rating</option>
+                </select>
+            </div>
+
+            <div class="products-grid">
+                <!-- Card 1 -->
+                <article class="p-card">
+                    <span class="p-badge">-30% OFF</span>
+                    <div class="p-thumb thumb-1"><span class="thumb-icon">🎧</span></div>
+                    <div class="p-body">
+                        <div class="p-rating">★★★★★ (4.9)</div>
+                        <h3 class="p-name"><a href="product-detail.html">AuraPro Wireless Headphones</a></h3>
+                        <div class="p-price-row">
+                            <span class="price-now">₹2,999</span>
+                            <span class="price-was">₹4,299</span>
+                        </div>
+                        <a href="cart.html" class="btn btn-primary btn-block">Add to Cart</a>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="p-card">
+                    <span class="p-badge badge-green">-25% OFF</span>
+                    <div class="p-thumb thumb-2"><span class="thumb-icon">⌨️</span></div>
+                    <div class="p-body">
+                        <div class="p-rating">★★★★☆ (4.7)</div>
+                        <h3 class="p-name"><a href="product-detail.html">Mechanix RGB Mechanical Keyboard</a></h3>
+                        <div class="p-price-row">
+                            <span class="price-now">₹1,999</span>
+                            <span class="price-was">₹2,699</span>
+                        </div>
+                        <a href="cart.html" class="btn btn-primary btn-block">Add to Cart</a>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="p-card">
+                    <span class="p-badge">-40% OFF</span>
+                    <div class="p-thumb thumb-3"><span class="thumb-icon">🖱️</span></div>
+                    <div class="p-body">
+                        <div class="p-rating">★★★★★ (4.8)</div>
+                        <h3 class="p-name"><a href="product-detail.html">Viper UltraLight Wireless Mouse</a></h3>
+                        <div class="p-price-row">
+                            <span class="price-now">₹1,199</span>
+                            <span class="price-was">₹1,999</span>
+                        </div>
+                        <a href="cart.html" class="btn btn-primary btn-block">Add to Cart</a>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="p-card">
+                    <span class="p-badge badge-purple">-20% OFF</span>
+                    <div class="p-thumb thumb-4"><span class="thumb-icon">⌚</span></div>
+                    <div class="p-body">
+                        <div class="p-rating">★★★★☆ (4.6)</div>
+                        <h3 class="p-name"><a href="product-detail.html">PulseTracker AMOLED Smartwatch</a></h3>
+                        <div class="p-price-row">
+                            <span class="price-now">₹2,499</span>
+                            <span class="price-was">₹3,199</span>
+                        </div>
+                        <a href="cart.html" class="btn btn-primary btn-block">Add to Cart</a>
+                    </div>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="p-card">
+                    <span class="p-badge">-50% OFF</span>
+                    <div class="p-thumb" style="background: linear-gradient(135deg, #ffedd5, #fed7aa);"><span class="thumb-icon">🔌</span></div>
+                    <div class="p-body">
+                        <div class="p-rating">★★★★★ (4.9)</div>
+                        <h3 class="p-name"><a href="product-detail.html">65W GaN Fast Charger (3-Port)</a></h3>
+                        <div class="p-price-row">
+                            <span class="price-now">₹1,199</span>
+                            <span class="price-was">₹2,399</span>
+                        </div>
+                        <a href="cart.html" class="btn btn-primary btn-block">Add to Cart</a>
+                    </div>
+                </article>
+
+                <!-- Card 6 -->
+                <article class="p-card">
+                    <span class="p-badge badge-green">-20% OFF</span>
+                    <div class="p-thumb" style="background: linear-gradient(135deg, #f1f5f9, #e2e8f0);"><span class="thumb-icon">💻</span></div>
+                    <div class="p-body">
+                        <div class="p-rating">★★★★★ (5.0)</div>
+                        <h3 class="p-name"><a href="product-detail.html">Aluminum Ergonomic Laptop Stand</a></h3>
+                        <div class="p-price-row">
+                            <span class="price-now">₹799</span>
+                            <span class="price-was">₹999</span>
+                        </div>
+                        <a href="cart.html" class="btn btn-primary btn-block">Add to Cart</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 NexStore E-Commerce • Assignment 10 Product Catalog</p>
+            <p><a href="../../index.html">← Back to Master Hub</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

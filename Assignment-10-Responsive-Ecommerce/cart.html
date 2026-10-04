@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart (3 Items) | NexStore</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .cart-layout {
+            display: grid;
+            grid-template-columns: 1.8fr 1fr;
+            gap: 2.5rem;
+            padding: 3rem 0 5rem;
+            align-items: start;
+        }
+        .cart-items-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 2rem;
+        }
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .cart-table th {
+            text-align: left;
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.75rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+        .cart-table td {
+            padding: 1.25rem 0;
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+        }
+        .item-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .item-icon {
+            font-size: 2.5rem;
+            background: #f1f5f9;
+            padding: 0.5rem;
+            border-radius: 8px;
+        }
+        .qty-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .qty-btn {
+            background: #f1f5f9;
+            border: 1px solid var(--border);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        /* Summary Checkout Box */
+        .summary-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 2rem;
+        }
+        .summary-card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+        .summary-total {
+            border-top: 2px dashed var(--border);
+            padding-top: 1rem;
+            margin-top: 1rem;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-dark);
+        }
+        .promo-box {
+            display: flex;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+        }
+        .promo-box input {
+            flex: 1;
+            padding: 0.6rem 0.8rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+        }
+        @media (max-width: 860px) {
+            .cart-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">🛍️ Nex<span>Store</span></a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">All Products</a></li>
+                <li><a href="index.html#categories">Categories</a></li>
+                <li><a href="index.html#offers">Deals</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="auth.html" class="icon-link">👤</a>
+                <a href="cart.html" class="cart-btn active">🛒 Cart <span class="cart-count">3</span></a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container cart-layout">
+        <!-- Cart Items List -->
+        <section class="cart-items-card">
+            <h1 style="font-size: 1.6rem; margin-bottom: 1.5rem;">Your Shopping Bag (3 Items)</h1>
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Product Details</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="item-info">
+                            <span class="item-icon">🎧</span>
+                            <div>
+                                <strong style="display: block;">AuraPro Wireless Headphones</strong>
+                                <span style="font-size: 0.8rem; color: var(--text-muted);">Color: Midnight Black</span>
+                            </div>
+                        </td>
+                        <td>₹2,999</td>
+                        <td>
+                            <div class="qty-controls">
+                                <button class="qty-btn">-</button>
+                                <span>1</span>
+                                <button class="qty-btn">+</button>
+                            </div>
+                        </td>
+                        <td><strong>₹2,999</strong></td>
+                    </tr>
+
+                    <tr>
+                        <td class="item-info">
+                            <span class="item-icon">⌨️</span>
+                            <div>
+                                <strong style="display: block;">Mechanix RGB Keyboard</strong>
+                                <span style="font-size: 0.8rem; color: var(--text-muted);">Switch: Blue Tactile</span>
+                            </div>
+                        </td>
+                        <td>₹1,999</td>
+                        <td>
+                            <div class="qty-controls">
+                                <button class="qty-btn">-</button>
+                                <span>1</span>
+                                <button class="qty-btn">+</button>
+                            </div>
+                        </td>
+                        <td><strong>₹1,999</strong></td>
+                    </tr>
+
+                    <tr>
+                        <td class="item-info">
+                            <span class="item-icon">🔌</span>
+                            <div>
+                                <strong style="display: block;">65W GaN Fast Charger</strong>
+                                <span style="font-size: 0.8rem; color: var(--text-muted);">Port: 3-Port Type-C</span>
+                            </div>
+                        </td>
+                        <td>₹1,199</td>
+                        <td>
+                            <div class="qty-controls">
+                                <button class="qty-btn">-</button>
+                                <span>1</span>
+                                <button class="qty-btn">+</button>
+                            </div>
+                        </td>
+                        <td><strong>₹1,199</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div style="margin-top: 1.5rem;">
+                <a href="products.html" style="color: var(--primary); text-decoration: none; font-weight: 600;">← Continue Shopping</a>
+            </div>
+        </section>
+
+        <!-- Summary Checkout Card -->
+        <aside class="summary-card">
+            <h2>Order Summary</h2>
+            <div class="summary-row">
+                <span>Items Total:</span>
+                <span>₹6,197</span>
+            </div>
+            <div class="summary-row">
+                <span>Festive Discount:</span>
+                <span style="color: var(--danger);">- ₹500</span>
+            </div>
+            <div class="summary-row">
+                <span>Shipping / Delivery:</span>
+                <span style="color: var(--success); font-weight: 700;">FREE</span>
+            </div>
+
+            <!-- Coupon Code -->
+            <div class="promo-box">
+                <input type="text" placeholder="Promo code: TECHFEST500" value="TECHFEST500">
+                <button class="btn btn-secondary btn-sm">Applied</button>
+            </div>
+
+            <div class="summary-row summary-total">
+                <span>Total Amount:</span>
+                <span>₹5,697</span>
+            </div>
+
+            <button class="btn btn-primary btn-block" style="margin-top: 1.5rem;" onclick="alert('Proceeding to Mock Checkout!')">
+                Proceed to Checkout →
+            </button>
+            <p style="text-align: center; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.75rem;">
+                🔒 256-Bit SSL Encrypted Secure Checkout
+            </p>
+        </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 NexStore E-Commerce • Assignment 10 Cart Page</p>
+            <p><a href="../../index.html">← Back to Master Hub</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
